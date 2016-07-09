@@ -265,5 +265,8 @@ cfg_if! {
         pub use unix::*;
     } else {
         // Unknown target_family
+        // TODO: Why doesn't it fallback to unix??
+        mod unix;
+        pub use unix::*;
     }
 }

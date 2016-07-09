@@ -368,7 +368,8 @@ cfg_if! {
                         target_os = "bitrig"))] {
         mod openbsdlike;
         pub use self::openbsdlike::*;
-    } else if #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))] {
+    } else if #[cfg(any(target_os = "freebsd", target_os = "dragonfly",
+                        target_os = "kfreebsd"))] {
         mod freebsdlike;
         pub use self::freebsdlike::*;
     } else {
