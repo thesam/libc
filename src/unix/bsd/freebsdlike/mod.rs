@@ -817,9 +817,8 @@ cfg_if! {
         pub use self::dragonfly::*;
     } else if #[cfg(target_os = "kfreebsd")] {
         //TODO: cfg any
-        //TODO: Can we simply re-use freebsd like this?
-        mod freebsd;
-        pub use self::freebsd::*;
+        mod kfreebsd;
+        pub use self::kfreebsd::*;
     } else {
         // ...
     }
