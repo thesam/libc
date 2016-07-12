@@ -815,10 +815,6 @@ cfg_if! {
     } else if #[cfg(target_os = "dragonfly")] {
         mod dragonfly;
         pub use self::dragonfly::*;
-    } else if #[cfg(target_os = "kfreebsd")] {
-        //TODO: cfg any
-        mod kfreebsd;
-        pub use self::kfreebsd::*;
     } else {
         // ...
     }

@@ -52,7 +52,7 @@ s! {
         pub ai_protocol: ::c_int,
         pub ai_addrlen: socklen_t,
 
-        #[cfg(any(target_os = "linux", target_os = "emscripten"))]
+        #[cfg(any(target_os = "linux", target_os = "kfreebsd", target_os = "emscripten"))]
         pub ai_addr: *mut ::sockaddr,
 
         pub ai_canonname: *mut c_char,
@@ -870,6 +870,9 @@ cfg_if! {
     } else if #[cfg(target_os = "android")] {
         mod android;
         pub use self::android::*;
+    } else if #[cfg(target_os = "kfreebsd")] {
+        mod kfreebsd;
+        pub use self::kfreebsd::*;
     } else {
         // Unknown target_os
     }

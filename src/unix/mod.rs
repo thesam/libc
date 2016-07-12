@@ -810,6 +810,7 @@ extern {
 
 cfg_if! {
     if #[cfg(any(target_os = "linux",
+                 target_os = "kfreebsd",
                  target_os = "android",
                  target_os = "emscripten"))] {
         mod notbsd;
@@ -820,8 +821,7 @@ cfg_if! {
                         target_os = "dragonfly",
                         target_os = "openbsd",
                         target_os = "netbsd",
-                        target_os = "bitrig",
-                        target_os = "kfreebsd"))] {
+                        target_os = "bitrig"))] {
         mod bsd;
         pub use self::bsd::*;
     } else if #[cfg(target_os = "solaris")] {
