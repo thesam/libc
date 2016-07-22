@@ -627,7 +627,7 @@ extern {
                              remote_iov: *const ::iovec,
                              riovcnt: ::c_ulong,
                              flags: ::c_ulong) -> isize;
-    pub fn pthread_set_name_np(tid: ::pthread_t, name: *const ::c_char);
+    pub fn pthread_setname_np(tid: ::pthread_t, name: *const ::c_char);
 }
 
 mod other;
