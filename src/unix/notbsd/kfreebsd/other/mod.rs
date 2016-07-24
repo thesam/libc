@@ -121,6 +121,15 @@ s! {
         __unused4: ::c_ulong,
         __unused5: ::c_ulong
     }
+
+    // FIXME this is actually a union
+    pub struct sem_t {
+        #[cfg(target_pointer_width = "32")]
+        __size: [::c_char; 16],
+        #[cfg(target_pointer_width = "64")]
+        __size: [::c_char; 32],
+        __align: [::c_long; 0],
+    }
 }
 
 pub const RLIMIT_RSS: ::c_int = 5;
@@ -420,6 +429,9 @@ pub const F_SETOWN: ::c_int = 8;
 pub const F_SETLK: ::c_int = 6;
 pub const F_SETLKW: ::c_int = 7;
 
+pub const SEEK_DATA: ::c_int = 3;
+pub const SEEK_HOLE: ::c_int = 4;
+
 pub const SFD_NONBLOCK: ::c_int = 0x0800;
 
 pub const TCSANOW: ::c_int = 0;
@@ -506,6 +518,7 @@ extern {
     pub fn pthread_setaffinity_np(thread: ::pthread_t,
                                   cpusetsize: ::size_t,
                                   cpuset: *const ::cpu_set_t) -> ::c_int;
+    pub fn sched_getcpu() -> ::c_int;
 }
 
 mod b64;
