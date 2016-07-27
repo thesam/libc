@@ -21,18 +21,18 @@ pub enum fpos64_t {} // TODO: fill this out with a struct
 
 s! {
     pub struct dirent {
-        pub d_ino: ::ino_t,
-        pub d_off: ::off_t,
+        pub d_ino: ::c_uint,
         pub d_reclen: ::c_ushort,
         pub d_type: ::c_uchar,
+        pub d_namlen: ::c_uchar,
         pub d_name: [::c_char; 256],
     }
 
     pub struct dirent64 {
-        pub d_ino: ::ino64_t,
-        pub d_off: ::off64_t,
+        pub d_ino: ::c_uint,
         pub d_reclen: ::c_ushort,
         pub d_type: ::c_uchar,
+        pub d_namlen: ::c_uchar,
         pub d_name: [::c_char; 256],
     }
 
