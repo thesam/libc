@@ -277,18 +277,18 @@ pub const SOCK_SEQPACKET: ::c_int = 5;
 
 pub const SOL_SOCKET: ::c_int = 0xffff;
 
-pub const SO_REUSEADDR: ::c_int = 2;
-pub const SO_TYPE: ::c_int = 3;
-pub const SO_ERROR: ::c_int = 4;
-pub const SO_DONTROUTE: ::c_int = 5;
-pub const SO_BROADCAST: ::c_int = 6;
-pub const SO_SNDBUF: ::c_int = 7;
-pub const SO_RCVBUF: ::c_int = 8;
-pub const SO_KEEPALIVE: ::c_int = 9;
-pub const SO_OOBINLINE: ::c_int = 10;
-pub const SO_LINGER: ::c_int = 13;
-pub const SO_REUSEPORT: ::c_int = 15;
-pub const SO_ACCEPTCONN: ::c_int = 30;
+pub const SO_REUSEADDR: ::c_int = 0x0004;
+pub const SO_TYPE: ::c_int = 0x1008;
+pub const SO_ERROR: ::c_int = 0x1007;
+pub const SO_DONTROUTE: ::c_int = 0x0010;
+pub const SO_BROADCAST: ::c_int = 0x0020;
+pub const SO_SNDBUF: ::c_int = 0x1001;
+pub const SO_RCVBUF: ::c_int = 0x1002;
+pub const SO_KEEPALIVE: ::c_int = 0x0008;
+pub const SO_OOBINLINE: ::c_int = 0x0100;
+pub const SO_LINGER: ::c_int = 0x0080;
+pub const SO_REUSEPORT: ::c_int = 0x0200;
+pub const SO_ACCEPTCONN: ::c_int = 0x0002;
 
 pub const TCP_COOKIE_TRANSACTIONS: ::c_int = 15;
 pub const TCP_THIN_LINEAR_TIMEOUTS: ::c_int = 16;
