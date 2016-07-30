@@ -275,7 +275,7 @@ pub const SOCK_STREAM: ::c_int = 1;
 pub const SOCK_DGRAM: ::c_int = 2;
 pub const SOCK_SEQPACKET: ::c_int = 5;
 
-pub const SOL_SOCKET: ::c_int = 1;
+pub const SOL_SOCKET: ::c_int = 0xffff;
 
 pub const SO_REUSEADDR: ::c_int = 2;
 pub const SO_TYPE: ::c_int = 3;
