@@ -142,7 +142,7 @@ pub const RLIMIT_RTTIME: ::c_int = 15;
 pub const RLIMIT_NLIMITS: ::c_int = 16;
 
 pub const O_APPEND: ::c_int = 1024;
-pub const O_CREAT: ::c_int = 64;
+pub const O_CREAT: ::c_int = 512;
 pub const O_EXCL: ::c_int = 128;
 pub const O_NOCTTY: ::c_int = 256;
 pub const O_NONBLOCK: ::c_int = 2048;
