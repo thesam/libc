@@ -1,6 +1,9 @@
 use dox::mem;
 
+#[cfg(not(target_os = "kfreebsd"))]
 pub type sa_family_t = u16;
+#[cfg(target_os = "kfreebsd")]
+pub type sa_family_t = u8;
 pub type pthread_key_t = ::c_uint;
 pub type speed_t = ::c_uint;
 pub type tcflag_t = ::c_uint;
