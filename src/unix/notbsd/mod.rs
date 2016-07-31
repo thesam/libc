@@ -11,16 +11,34 @@ pub type id_t = ::c_uint;
 pub enum timezone {}
 
 s! {
+    #[cfg(not(target_os = "kfreebsd"))]
     pub struct sockaddr {
         pub sa_family: sa_family_t,
         pub sa_data: [::c_char; 14],
     }
 
+    #[cfg(target_os = "kfreebsd")]
+    pub struct sockaddr {
+        pub sa_len: u8,
+        pub sa_family: sa_family_t,
+        pub sa_data: [::c_char; 14],
+    }
+
+    #[cfg(not(target_os = "kfreebsd"))]
     pub struct sockaddr_in {
         pub sin_family: sa_family_t,
         pub sin_port: ::in_port_t,
         pub sin_addr: ::in_addr,
         pub sin_zero: [u8; 8],
+    }
+
+    #[cfg(target_os = "kfreebsd")]
+    pub struct sockaddr_in {
+        pub sin_len: u8,
+        pub sin_family: ::sa_family_t,
+        pub sin_port: ::in_port_t,
+        pub sin_addr: ::in_addr,
+        pub sin_zero: [::c_char; 8],
     }
 
     pub struct sockaddr_in6 {
