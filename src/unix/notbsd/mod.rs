@@ -32,6 +32,8 @@ s! {
     }
 
     pub struct sockaddr_in6 {
+        #[cfg(target_os = "kfreebsd")]
+        pub sin6_len: u8,
         pub sin6_family: sa_family_t,
         pub sin6_port: ::in_port_t,
         pub sin6_flowinfo: u32,
@@ -40,11 +42,15 @@ s! {
     }
 
     pub struct sockaddr_un {
+        #[cfg(target_os = "kfreebsd")]
+        pub sun_len: u8,
         pub sun_family: sa_family_t,
         pub sun_path: [::c_char; 108]
     }
 
     pub struct sockaddr_storage {
+        #[cfg(target_os = "kfreebsd")]
+        pub ss_len: u8,
         pub ss_family: sa_family_t,
         __ss_align: ::size_t,
         #[cfg(target_pointer_width = "32")]
