@@ -301,10 +301,9 @@ pub const TCP_REPAIR_OPTIONS: ::c_int = 22;
 pub const TCP_FASTOPEN: ::c_int = 23;
 pub const TCP_TIMESTAMP: ::c_int = 24;
 
-pub const SA_ONSTACK: ::c_int = 0x08000000;
-pub const SA_SIGINFO: ::c_int = 0x00000004;
-pub const SA_NOCLDWAIT: ::c_int = 0x00000002;
-
+pub const SA_ONSTACK: ::c_int = 0x0001;
+pub const SA_SIGINFO: ::c_int = 0x0040;
+pub const SA_NOCLDWAIT: ::c_int = 0x0020;
 pub const SIGCHLD: ::c_int = 17;
 pub const SIGBUS: ::c_int = 7;
 pub const SIGUSR1: ::c_int = 10;

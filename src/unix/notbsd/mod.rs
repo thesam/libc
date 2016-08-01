@@ -493,10 +493,23 @@ pub const LOCK_UN: ::c_int = 8;
 
 pub const SIGSTKSZ: ::size_t = 8192;
 
+#[cfg(not(target_os = "kfreebsd"))]
 pub const SA_NODEFER: ::c_int = 0x40000000;
+#[cfg(not(target_os = "kfreebsd"))]
 pub const SA_RESETHAND: ::c_int = 0x80000000;
+#[cfg(not(target_os = "kfreebsd"))]
 pub const SA_RESTART: ::c_int = 0x10000000;
+#[cfg(not(target_os = "kfreebsd"))]
 pub const SA_NOCLDSTOP: ::c_int = 0x00000001;
+
+#[cfg(target_os = "kfreebsd")]
+pub const SA_NODEFER: ::c_int = 0x0010;
+#[cfg(target_os = "kfreebsd")]
+pub const SA_RESETHAND: ::c_int = 0x0004;
+#[cfg(target_os = "kfreebsd")]
+pub const SA_RESTART: ::c_int = 0x0002;
+#[cfg(target_os = "kfreebsd")]
+pub const SA_NOCLDSTOP: ::c_int = 0x0008;
 
 pub const SS_ONSTACK: ::c_int = 1;
 pub const SS_DISABLE: ::c_int = 2;
