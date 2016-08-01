@@ -259,9 +259,15 @@ pub const O_RDONLY: ::c_int = 0;
 pub const O_WRONLY: ::c_int = 1;
 pub const O_RDWR: ::c_int = 2;
 pub const O_TRUNC: ::c_int = 512;
+#[cfg(not(target_os = "kfreebsd"))]
 pub const O_CLOEXEC: ::c_int = 0x80000;
+#[cfg(target_os = "kfreebsd")]
+pub const O_CLOEXEC: ::c_int = 0x00100000;
 
+#[cfg(not(target_os = "kfreebsd"))]
 pub const SOCK_CLOEXEC: ::c_int = O_CLOEXEC;
+#[cfg(target_os = "kfreebsd")]
+pub const SOCK_CLOEXEC: ::c_int = 0x10000000;
 
 pub const S_IFIFO: ::mode_t = 4096;
 pub const S_IFCHR: ::mode_t = 8192;
