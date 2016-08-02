@@ -141,17 +141,17 @@ pub const RLIM_INFINITY: ::rlim_t = !0;
 pub const RLIMIT_RTTIME: ::c_int = 15;
 pub const RLIMIT_NLIMITS: ::c_int = 16;
 
-pub const O_APPEND: ::c_int = 1024;
-pub const O_CREAT: ::c_int = 512;
-pub const O_EXCL: ::c_int = 128;
-pub const O_NOCTTY: ::c_int = 256;
-pub const O_NONBLOCK: ::c_int = 2048;
-pub const O_SYNC: ::c_int = 1052672;
-pub const O_RSYNC: ::c_int = 1052672;
-pub const O_DSYNC: ::c_int = 4096;
-pub const O_FSYNC: ::c_int = 0x101000;
+pub const O_APPEND: ::c_int = 0x0008;
+pub const O_CREAT: ::c_int = 0x0200;
+pub const O_EXCL: ::c_int = 0x0800;
+pub const O_NOCTTY: ::c_int = 0x8000;
+pub const O_NONBLOCK: ::c_int = 0x0004;
+pub const O_SYNC: ::c_int = 0x0080;
+pub const O_RSYNC: ::c_int = 0x0080;
+pub const O_DSYNC: ::c_int = 0x0080;
+pub const O_FSYNC: ::c_int = 0x0080;
 
-pub const SOCK_NONBLOCK: ::c_int = O_NONBLOCK;
+pub const SOCK_NONBLOCK: ::c_int = 0x20000000;
 
 pub const LC_PAPER: ::c_int = 7;
 pub const LC_NAME: ::c_int = 8;
