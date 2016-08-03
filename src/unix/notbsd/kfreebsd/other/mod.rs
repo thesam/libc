@@ -180,8 +180,8 @@ pub const LC_ALL_MASK: ::c_int = ::LC_CTYPE_MASK
                                | LC_MEASUREMENT_MASK
                                | LC_IDENTIFICATION_MASK;
 
-pub const MAP_ANON: ::c_int = 0x0020;
-pub const MAP_ANONYMOUS: ::c_int = 0x0020;
+pub const MAP_ANON: ::c_int = 0x1000;
+pub const MAP_ANONYMOUS: ::c_int = 0x1000;
 pub const MAP_GROWSDOWN: ::c_int = 0x0100;
 pub const MAP_DENYWRITE: ::c_int = 0x0800;
 pub const MAP_EXECUTABLE: ::c_int = 0x01000;
