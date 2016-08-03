@@ -6,9 +6,8 @@ pub type __priority_which_t = ::c_uint;
 s! {
     pub struct sigaction {
         pub sa_sigaction: ::sighandler_t,
-        pub sa_mask: ::sigset_t,
         pub sa_flags: ::c_int,
-        _restorer: *mut ::c_void,
+        pub sa_mask: sigset_t,
     }
 
     pub struct stack_t {

@@ -12,7 +12,7 @@ pub type __fsword_t = ::c_long;
 
 s! {
     pub struct sigset_t {
-        __val: [::c_ulong; 16],
+        bits: [u32; 4],
     }
 
     pub struct sysinfo {
