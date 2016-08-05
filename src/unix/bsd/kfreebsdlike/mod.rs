@@ -51,9 +51,9 @@ pub type nl_item = ::c_int;
 //         pub ai_next: *mut addrinfo,
 //     }
 //
-//     pub struct sigset_t {
-//         bits: [u32; 4],
-//     }
+    pub struct sigset_t {
+        bits: [u32; 4],
+    }
 //
 //     pub struct siginfo_t {
 //         pub si_signo: ::c_int,
