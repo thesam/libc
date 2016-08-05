@@ -371,6 +371,9 @@ cfg_if! {
     } else if #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))] {
         mod freebsdlike;
         pub use self::freebsdlike::*;
+    } else if #[cfg(target_os = "kfreebsd")] {
+        mod kfreebsdlike;
+        pub use self::kfreebsdlike::*;
     } else {
         // Unknown target_os
     }

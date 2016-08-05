@@ -820,7 +820,8 @@ cfg_if! {
                         target_os = "dragonfly",
                         target_os = "openbsd",
                         target_os = "netbsd",
-                        target_os = "bitrig"))] {
+                        target_os = "bitrig",
+                        target_os = "kfreebsd"))] {
         mod bsd;
         pub use self::bsd::*;
     } else if #[cfg(target_os = "solaris")] {
