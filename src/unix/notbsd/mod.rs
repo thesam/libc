@@ -454,7 +454,10 @@ pub const IFF_LOOPBACK: ::c_int = 0x8;
 
 pub const AF_UNIX: ::c_int = 1;
 pub const AF_INET: ::c_int = 2;
+#[cfg(not(target_os = "kfreebsd"))]
 pub const AF_INET6: ::c_int = 10;
+#[cfg(target_os = "kfreebsd")]
+pub const AF_INET6: ::c_int = 28;
 pub const SOCK_RAW: ::c_int = 3;
 pub const IPPROTO_TCP: ::c_int = 6;
 pub const IPPROTO_IP: ::c_int = 0;
