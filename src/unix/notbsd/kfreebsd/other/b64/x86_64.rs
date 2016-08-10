@@ -119,7 +119,7 @@ pub const SO_SNDTIMEO: ::c_int = 0x1005;
 pub const SO_RCVTIMEO: ::c_int = 0x1006;
 
 pub const FIOCLEX: ::c_ulong = 0x20006601;
-pub const FIONBIO: ::c_ulong = 0x5421;
+pub const FIONBIO: ::c_ulong = 0x8004667e;
 
 pub const PTRACE_GETFPREGS: ::c_uint = 14;
 pub const PTRACE_SETFPREGS: ::c_uint = 15;
