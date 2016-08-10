@@ -113,10 +113,10 @@ pub const MAP_32BIT: ::c_int = 0x0040;
 pub const EDEADLOCK: ::c_int = 35;
 
 pub const SO_PEERCRED: ::c_int = 17;
-pub const SO_RCVLOWAT: ::c_int = 18;
-pub const SO_SNDLOWAT: ::c_int = 19;
-pub const SO_RCVTIMEO: ::c_int = 20;
-pub const SO_SNDTIMEO: ::c_int = 21;
+pub const SO_SNDLOWAT: ::c_int = 0x1003;
+pub const SO_RCVLOWAT: ::c_int = 0x1004;
+pub const SO_SNDTIMEO: ::c_int = 0x1005;
+pub const SO_RCVTIMEO: ::c_int = 0x1006;
 
 pub const FIOCLEX: ::c_ulong = 0x20006601;
 pub const FIONBIO: ::c_ulong = 0x5421;
