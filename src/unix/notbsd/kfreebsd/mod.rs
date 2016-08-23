@@ -3,7 +3,7 @@
 use dox::mem;
 
 pub type useconds_t = u32;
-pub type dev_t = u64;
+pub type dev_t = u32;
 pub type socklen_t = u32;
 pub type pthread_t = c_ulong;
 pub type mode_t = u32;
